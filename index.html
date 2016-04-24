@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Node-randomuser by KevinTCoughlin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Node-randomuser</h1>
+      <h2 class="project-tagline">A (tiny) Node.js client for http://randomuser.me&#39;s REST API</h2>
+      <a href="https://github.com/KevinTCoughlin/node-randomuser" class="btn">View on GitHub</a>
+      <a href="https://github.com/KevinTCoughlin/node-randomuser/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/KevinTCoughlin/node-randomuser/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="node-randomuser" class="anchor" href="#node-randomuser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>node-randomuser</h1>
+
+<p><a href="https://travis-ci.org/KevinTCoughlin/node-randomuser"><img src="https://img.shields.io/travis/KevinTCoughlin/node-randomuser.svg?style=flat-square" alt="Build Status"></a>
+<a href="https://www.npmjs.com/package/randomuser"><img src="https://img.shields.io/npm/v/randomuser.svg?style=flat-square" alt="npm version"></a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Install using the node.js package manager <a href="http://npmjs.org/">npm</a>:</p>
+
+<pre><code>$ npm install randomuser
+</code></pre>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>Demos of the randomuser module are located in: <a href="https://github.com/KevinTCoughlin/node-randomuser/tree/master/examples">./examples</a></p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a id="require-module-and-initialize-client" class="anchor" href="#require-module-and-initialize-client" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Require Module and Initialize Client</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> RandomUser <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>..<span class="pl-pds">'</span></span>)
+  , r <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">RandomUser</span>();</pre></div>
+
+<h3>
+<a id="getuserscallback" class="anchor" href="#getuserscallback" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.getUsers(callback)</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">r</span>.<span class="pl-en">getUsers</span>(<span class="pl-k">function</span>(<span class="pl-smi">data</span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(data);
+});</pre></div>
+
+<h3>
+<a id="getusersparams-callback" class="anchor" href="#getusersparams-callback" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.getUsers(params, callback)</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">r</span>.<span class="pl-en">getUsers</span>({ seed<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>foxie<span class="pl-pds">"</span></span>, results<span class="pl-k">:</span> <span class="pl-c1">5</span>, gender<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>male<span class="pl-pds">"</span></span> }, <span class="pl-k">function</span>(<span class="pl-smi">data</span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(data);
+});</pre></div>
+
+<h3>
+<a id="params-object-documentation" class="anchor" href="#params-object-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>params {Object} <a href="http://randomuser.me/">Documentation</a>
+</h3>
+
+<ul>
+<li>
+<code>results</code> - int specifying number of results to return</li>
+<li>
+<code>genders</code> - string - "male" or "female" specifying gender to generate</li>
+<li>
+<code>seed</code> - string - service will return same data for given seed</li>
+</ul>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>Issue the following Make command in the top directory to run the mocha.js test cases:</p>
+
+<pre><code>$ make test
+</code></pre>
+
+<p>Or...</p>
+
+<pre><code>$ npm test
+</code></pre>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Feel free to contribute!</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>node-randomuser: Copyright (c) 2013-2016 Kevin Coughlin <a href="mailto:kevintcoughlin@gmail.com">kevintcoughlin@gmail.com</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/KevinTCoughlin/node-randomuser">Node-randomuser</a> is maintained by <a href="https://github.com/KevinTCoughlin">KevinTCoughlin</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
